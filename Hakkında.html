@@ -1,118 +1,345 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="tr"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rabia ❤️ Özgür</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
 
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+    color:white;
+    overflow:hidden;
+}
 
-    <title>Hakkında</title>
-    <link rel="icon" href="code-slash.svg" type="image/x-icon">
+.container{
+    max-width:800px;
+    text-align:center;
+    padding:40px;
+    z-index:2;
+}
 
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
 
+.subtitle{
+    color:#d1d5db;
+    margin-bottom:35px;
+    font-size:1.1rem;
+}
 
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:25px;
+}
 
+.timer{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:20px;
+}
 
+.box{
+    background:rgba(255,255,255,0.08);
+    border-radius:15px;
+    padding:20px;
+}
 
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-    <link rel="stylesheet" href="Hakkında.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 6.9.2, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+.number{
+    font-size:2rem;
+    font-weight:bold;
+}
 
+.label{
+    color:#cbd5e1;
+    margin-top:5px;
+}
 
+.message{
+    font-size:1.15rem;
+    line-height:1.8;
+}
 
-    <script type="application/ld+json">        {
-                "@context": "http://schema.org",
-                "@type": "Organization",
-                "name": "",
-                "logo": "images/default-logo.png"
-        }</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Hakkında">
-    <meta property="og:type" content="website">
-    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+button{
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:1rem;
+    margin-top:20px;
+    background:#ec4899;
+    color:white;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#loveMessage{
+    margin-top:20px;
+    font-size:1.1rem;
+    color:#f9a8d4;
+    min-height:40px;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation:float 8s linear infinite;
+    opacity:0.5;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+
+@media(max-width:600px){
+    .timer{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    h1{
+        font-size:2.2rem;
+    }
+}
+</style>
 </head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="tr"><header class="u-clearfix u-header u-header" id="sec-3034"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="#" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Giriş.html" style="padding: 10px 20px;">Giriş</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Hakkında.html" style="padding: 10px 20px;">Hakkında</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="İletişim.html" style="padding: 10px 20px;">İletişim</a>
-</li></ul>
-          </div>
-          <div class="u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Giriş.html">Giriş</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Hakkında.html">Hakkında</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="İletişim.html">İletişim</a>
-</li></ul>
-              </div>
+
+<body>
+
+<div class="container">
+
+    <h1>Rabia ❤️ Özgür</h1>
+
+    <p class="subtitle">
+        "Bazı insanlar tesadüfen gelir,
+        sonra hayatının en güzel hikayesi olur."
+    </p>
+
+    <div class="card">
+
+        <h2>Birlikte Geçen Süremiz ⏳</h2>
+
+        <div class="timer">
+            <div class="box">
+                <div class="number" id="days">0</div>
+                <div class="label">Gün</div>
             </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-      </div></header>
-    <section class="u-clearfix u-section-1" id="sec-e290">
-      <div class="u-clearfix u-sheet u-sheet-1"></div>
-    </section>
-    
-    
 
+            <div class="box">
+                <div class="number" id="hours">0</div>
+                <div class="label">Saat</div>
+            </div>
 
+            <div class="box">
+                <div class="number" id="minutes">0</div>
+                <div class="label">Dakika</div>
+            </div>
 
+            <div class="box">
+                <div class="number" id="seconds">0</div>
+                <div class="label">Saniye</div>
+            </div>
+        </div>
+    </div>
 
+    <div class="card">
+        <div class="message">
+            Sevgili Rabia,
+            <br><br>
+            Bu sayfayı ne zaman beni özlersen açman için hazırladım.
+            Belki her an yanında olamam ama bilmeni isterim ki
+            kalbimin en güzel köşesinde hep sen varsın.
+            <br><br>
+            İyi ki 6 Şubat'ta yollarımız kesişti.
+            ❤️
+        </div>
 
-    <p>merhaba ben özgür güngör</p>
+        <button onclick="showLoveMessage()">
+            Bana Bir Mesaj Bırak ❤️
+        </button>
 
+        <div id="loveMessage"></div>
+    </div>
 
+</div>
 
+<script>
 
+const startDate = new Date("2026-02-06T00:00:00");
 
+function updateTimer(){
 
+    const now = new Date();
 
+    const diff = now - startDate;
 
+    const days = Math.floor(diff/(1000*60*60*24));
+    const hours = Math.floor((diff/(1000*60*60))%24);
+    const minutes = Math.floor((diff/(1000*60))%60);
+    const seconds = Math.floor((diff/1000)%60);
 
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
 
+setInterval(updateTimer,1000);
+updateTimer();
 
+const messages = [
+"Sen hayatıma gelen en güzel tesadüfsün. ❤️",
+"İyi ki varsın Rabia.",
+"Gözlerinin içinde kaybolmayı seviyorum. ✨",
+"Bugün de seni ilk günkü gibi seviyorum.",
+"Seninle geçen her saniye çok değerli.",
+"Kalbimin en güzel köşesi sana ait.",
+"Sen gülünce dünya daha güzel oluyor.",
+"Bir ömür seninle sohbet etmek isterim.",
+"Yanımda olmasan bile kalbimdesin.",
+"Seni düşündüğüm bir gün bile geçmiyor.",
+"Sesini duymak günümün en güzel anı.",
+"İyi ki yollarımız kesişmiş.",
+"Sen benim en güzel hikâyemsin.",
+"Hayatıma anlam kattığın için teşekkür ederim.",
+"Senin yanında zaman çok hızlı geçiyor.",
+"Seni her geçen gün daha çok seviyorum.",
+"Kalbim senin adını ezbere biliyor.",
+"Birlikte kurduğumuz hayalleri seviyorum.",
+"Seninle yaşlanmak istiyorum.",
+"En güzel sabahlar seninle başlayanlar.",
+"Sen benim huzurumsun.",
+"Senin mutluluğun benim mutluluğum.",
+"İyi ki kalbim seni seçmiş.",
+"Seninle her şey daha anlamlı.",
+"Mesafeler sevgimizi değiştiremez.",
+"Sen benim en güzel duamsın.",
+"Bir bakışın bile günümü güzelleştiriyor.",
+"Seninle sıradan günler bile özel.",
+"Her şeyden önce seni seviyorum.",
+"Kalbim her zaman sana ait olacak.",
+"Hayatımın en güzel kararı seni sevmekti.",
+"Sen benim en değerli hediyemsin.",
+"Yanında kendim olabiliyorum.",
+"Senin sevginde huzur buluyorum.",
+"Bugün de seni özlüyorum.",
+"Her gün seni yeniden seçerdim.",
+"Sen benim evim gibisin.",
+"Varlığın bana güç veriyor.",
+"Birlikte geçirdiğimiz her an çok kıymetli.",
+"Senin sesin en sevdiğim melodi.",
+"Sen benim yarım kalan cümlelerimi tamamlıyorsun.",
+"Hayatımın en güzel kısmısın.",
+"Seninle her şey mümkün gibi geliyor.",
+"Gözlerindeki ışığı seviyorum.",
+"Kalbim sana ait.",
+"Seninle kurduğumuz geleceği düşünüyorum.",
+"Sen benim en güzel alışkanlığımsın.",
+"Sana sarılmayı özlüyorum.",
+"Senin yanında dünya duruyor gibi.",
+"İyi ki tanışmışız.",
+"Bir ömür seni sevebilirim.",
+"Sen benim şansımsın.",
+"Mutluluğun en güzel hali sensin.",
+"Hayatıma renk kattın.",
+"Sen benim gülümseme sebebimsin.",
+"Seni sevmek çok güzel.",
+"Sen benim en özel insansımsın.",
+"Bir gün değil her gün seni seviyorum.",
+"Seninle geçen zaman çok değerli.",
+"Kalbimde hep sen varsın.",
+"Hayat seni karşıma çıkardığı için şanslıyım.",
+"Her şeyden çok seni önemsiyorum.",
+"Sen benim en güzel gerçeğimsin.",
+"İyi ki bana denk gelmişsin.",
+"Sevgin içimi ısıtıyor.",
+"Seninle daha güçlüyüm.",
+"Birlikte nice güzel günlere.",
+"Sen benim en sevdiğim kişisin.",
+"Seni düşündükçe gülümsüyorum.",
+"Kalbim seni görünce hızlanıyor.",
+"Yanımda olman yeter.",
+"Sen benim geleceğimsin.",
+"Sensiz eksik hissederim.",
+"Birlikte olduğumuz her gün için minnettarım.",
+"Sen benim huzurlu limanımsın.",
+"İyi ki kalbimdesin.",
+"Sen benim güzel tesadüfümsün.",
+"Sana bakmak bile mutluluk veriyor.",
+"Sen benim en güzel heyecanımsın.",
+"Hayatımın anlamlarından birisin.",
+"Sen benim vazgeçilmezimsin.",
+"Her gün biraz daha aşık oluyorum.",
+"Sen benim mutluluk sebebimsin.",
+"İyi ki sen.",
+"Kalbimdeki yerin bambaşka.",
+"Bir mesajın bile günümü güzelleştiriyor.",
+"Sen benim en güzel yarınımsın.",
+"Yanında zamanın nasıl geçtiğini anlamıyorum.",
+"Seni tanımak hayatımın dönüm noktasıydı.",
+"Sen benim en sevdiğim hikâyesin.",
+"İyi ki benimlesin.",
+"Seninle olmak çok güzel.",
+"Kalbimde sadece sen varsın.",
+"Sana her gün teşekkür etmek istiyorum.",
+"Birlikte olduğumuz için çok mutluyum.",
+"Sen benim dünyamsın.",
+"Ne olursa olsun seni seveceğim.",
+"Sen benim sonsuzluğumsun. ❤️"
+];
 
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-2a02"><div class="u-clearfix u-sheet  u-sheet-1">
+function showLoveMessage(){
 
-        <p class="u-small-text u-text u-text-variant u-text-1">Örnek metin. Metin Öğesini seçmek için tıklayın.</p>
+    const random =
+    messages[Math.floor(Math.random()*messages.length)];
 
-      </div>
-      
-      
-    </footer>
+    document.getElementById("loveMessage").innerHTML = random;
+}
 
+function createHeart(){
 
+    const heart = document.createElement("div");
 
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
 
+    heart.style.left = Math.random()*100+"vw";
+    heart.style.fontSize = Math.random()*20+15+"px";
 
+    document.body.appendChild(heart);
 
-    <section class="u-backlink u-clearfix u-grey-80">
-      <p class="u-text">
-        <span>This site was created with the </span>
-        <a class="u-link"https://github.com/ozgurgungor1" target="_blank" rel="nofollow">
-          <span>Özgür Güngör</span>
-        </a>
-      </p>
-    </section>
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,600);
+
+</script>
 
 </body>
-
 </html>
