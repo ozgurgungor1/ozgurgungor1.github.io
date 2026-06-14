@@ -10,7 +10,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: "Segoe UI", sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
@@ -18,15 +18,28 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
-    color:white;
+    background:linear-gradient(-45deg,#0f172a,#1e293b,#111827,#312e81);
+    background-size:400% 400%;
+    animation:bg 15s ease infinite;
     overflow:hidden;
+    color:white;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 .container{
-    max-width:800px;
+    width:90%;
+    max-width:900px;
     text-align:center;
     padding:40px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.1);
     z-index:2;
 }
 
@@ -35,30 +48,22 @@ h1{
     margin-bottom:10px;
 }
 
-.subtitle{
+.quote{
     color:#d1d5db;
-    margin-bottom:35px;
-    font-size:1.1rem;
-}
-
-.card{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border-radius:20px;
-    padding:30px;
-    margin-bottom:25px;
+    margin-bottom:30px;
+    line-height:1.7;
 }
 
 .timer{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:15px;
-    margin-top:20px;
+    margin:25px 0;
 }
 
 .box{
-    background:rgba(255,255,255,0.08);
-    border-radius:15px;
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
     padding:20px;
 }
 
@@ -68,62 +73,61 @@ h1{
 }
 
 .label{
-    color:#cbd5e1;
     margin-top:5px;
+    color:#cbd5e1;
 }
 
-.message{
-    font-size:1.15rem;
-    line-height:1.8;
+.letter{
+    margin-top:25px;
+    line-height:1.9;
+    font-size:1.05rem;
 }
 
 button{
+    margin-top:25px;
     padding:14px 28px;
     border:none;
-    border-radius:30px;
-    cursor:pointer;
-    font-size:1rem;
-    margin-top:20px;
+    border-radius:40px;
     background:#ec4899;
     color:white;
-    transition:0.3s;
+    cursor:pointer;
+    font-size:1rem;
 }
 
 button:hover{
     transform:scale(1.05);
 }
 
-#loveMessage{
+#message{
+    min-height:60px;
     margin-top:20px;
-    font-size:1.1rem;
     color:#f9a8d4;
-    min-height:40px;
+    font-size:1.1rem;
 }
 
 .heart{
     position:absolute;
+    bottom:-50px;
     color:#ff4d6d;
-    animation:float 8s linear infinite;
-    opacity:0.5;
+    animation:rise linear forwards;
 }
 
-@keyframes float{
-    from{
-        transform:translateY(100vh);
-    }
+@keyframes rise{
     to{
-        transform:translateY(-100px);
+        transform:translateY(-110vh);
+        opacity:0;
     }
 }
 
-@media(max-width:600px){
-    .timer{
-        grid-template-columns:repeat(2,1fr);
-    }
+@media(max-width:700px){
 
-    h1{
-        font-size:2.2rem;
-    }
+.timer{
+grid-template-columns:repeat(2,1fr);
+}
+
+h1{
+font-size:2.2rem;
+}
 }
 </style>
 </head>
@@ -132,58 +136,58 @@ button:hover{
 
 <div class="container">
 
-    <h1>Rabia ❤️ Özgür</h1>
+<h1>Rabia ❤️ Özgür</h1>
 
-    <p class="subtitle">
-        "Bazı insanlar tesadüfen gelir,
-        sonra hayatının en güzel hikayesi olur."
-    </p>
+<p class="quote">
+"Bazı insanlar hayatımıza girer ve her şeyi değiştirir.
+Benim için o kişi sensin Rabia."
+</p>
 
-    <div class="card">
+<h2>6 Şubat 2026'dan Beri</h2>
 
-        <h2>Birlikte Geçen Süremiz ⏳</h2>
+<div class="timer">
 
-        <div class="timer">
-            <div class="box">
-                <div class="number" id="days">0</div>
-                <div class="label">Gün</div>
-            </div>
+<div class="box">
+<div id="days" class="number">0</div>
+<div class="label">Gün</div>
+</div>
 
-            <div class="box">
-                <div class="number" id="hours">0</div>
-                <div class="label">Saat</div>
-            </div>
+<div class="box">
+<div id="hours" class="number">0</div>
+<div class="label">Saat</div>
+</div>
 
-            <div class="box">
-                <div class="number" id="minutes">0</div>
-                <div class="label">Dakika</div>
-            </div>
+<div class="box">
+<div id="minutes" class="number">0</div>
+<div class="label">Dakika</div>
+</div>
 
-            <div class="box">
-                <div class="number" id="seconds">0</div>
-                <div class="label">Saniye</div>
-            </div>
-        </div>
-    </div>
+<div class="box">
+<div id="seconds" class="number">0</div>
+<div class="label">Saniye</div>
+</div>
 
-    <div class="card">
-        <div class="message">
-            Sevgili Rabia,
-            <br><br>
-            Bu sayfayı ne zaman beni özlersen açman için hazırladım.
-            Belki her an yanında olamam ama bilmeni isterim ki
-            kalbimin en güzel köşesinde hep sen varsın.
-            <br><br>
-            İyi ki 6 Şubat'ta yollarımız kesişti.
-            ❤️
-        </div>
+</div>
 
-        <button onclick="showLoveMessage()">
-            Bana Bir Mesaj Bırak ❤️
-        </button>
+<div class="letter">
+Sevgili Rabia,<br><br>
 
-        <div id="loveMessage"></div>
-    </div>
+Bu sayfayı sana küçük bir hediye olarak hazırladım.
+Ne zaman beni özlersen gelip bak diye...
+Belki her zaman yanında olamam ama bil ki kalbimin
+en güzel köşesinde hep sen varsın.<br><br>
+
+6 Şubat'ta başlayan hikâyemizin her saniyesi benim için çok değerli.
+İyi ki hayatımdasın. ❤️<br><br>
+
+— Özgür
+</div>
+
+<button onclick="randomMessage()">
+❤️ Bana Bir Şey Söyle
+</button>
+
+<div id="message"></div>
 
 </div>
 
@@ -191,153 +195,62 @@ button:hover{
 
 const startDate = new Date("2026-02-06T00:00:00");
 
-function updateTimer(){
+function updateCounter(){
 
-    const now = new Date();
+const now = new Date();
+const diff = now - startDate;
 
-    const diff = now - startDate;
+const days = Math.floor(diff / (1000*60*60*24));
+const hours = Math.floor((diff/(1000*60*60)) % 24);
+const minutes = Math.floor((diff/(1000*60)) % 60);
+const seconds = Math.floor((diff/1000) % 60);
 
-    const days = Math.floor(diff/(1000*60*60*24));
-    const hours = Math.floor((diff/(1000*60*60))%24);
-    const minutes = Math.floor((diff/(1000*60))%60);
-    const seconds = Math.floor((diff/1000)%60);
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
 
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
 }
 
-setInterval(updateTimer,1000);
-updateTimer();
+setInterval(updateCounter,1000);
+updateCounter();
 
 const messages = [
-"Sen hayatıma gelen en güzel tesadüfsün. ❤️",
+"Sen hayatıma gelen en güzel şeysin. ❤️",
 "İyi ki varsın Rabia.",
-"Gözlerinin içinde kaybolmayı seviyorum. ✨",
-"Bugün de seni ilk günkü gibi seviyorum.",
-"Seninle geçen her saniye çok değerli.",
+"Bugün de seni çok seviyorum.",
 "Kalbimin en güzel köşesi sana ait.",
-"Sen gülünce dünya daha güzel oluyor.",
-"Bir ömür seninle sohbet etmek isterim.",
-"Yanımda olmasan bile kalbimdesin.",
-"Seni düşündüğüm bir gün bile geçmiyor.",
-"Sesini duymak günümün en güzel anı.",
-"İyi ki yollarımız kesişmiş.",
-"Sen benim en güzel hikâyemsin.",
-"Hayatıma anlam kattığın için teşekkür ederim.",
-"Senin yanında zaman çok hızlı geçiyor.",
-"Seni her geçen gün daha çok seviyorum.",
-"Kalbim senin adını ezbere biliyor.",
-"Birlikte kurduğumuz hayalleri seviyorum.",
-"Seninle yaşlanmak istiyorum.",
-"En güzel sabahlar seninle başlayanlar.",
-"Sen benim huzurumsun.",
-"Senin mutluluğun benim mutluluğum.",
-"İyi ki kalbim seni seçmiş.",
-"Seninle her şey daha anlamlı.",
-"Mesafeler sevgimizi değiştiremez.",
-"Sen benim en güzel duamsın.",
-"Bir bakışın bile günümü güzelleştiriyor.",
-"Seninle sıradan günler bile özel.",
-"Her şeyden önce seni seviyorum.",
-"Kalbim her zaman sana ait olacak.",
-"Hayatımın en güzel kararı seni sevmekti.",
-"Sen benim en değerli hediyemsin.",
-"Yanında kendim olabiliyorum.",
-"Senin sevginde huzur buluyorum.",
-"Bugün de seni özlüyorum.",
-"Her gün seni yeniden seçerdim.",
-"Sen benim evim gibisin.",
-"Varlığın bana güç veriyor.",
-"Birlikte geçirdiğimiz her an çok kıymetli.",
-"Senin sesin en sevdiğim melodi.",
-"Sen benim yarım kalan cümlelerimi tamamlıyorsun.",
-"Hayatımın en güzel kısmısın.",
-"Seninle her şey mümkün gibi geliyor.",
-"Gözlerindeki ışığı seviyorum.",
-"Kalbim sana ait.",
-"Seninle kurduğumuz geleceği düşünüyorum.",
-"Sen benim en güzel alışkanlığımsın.",
-"Sana sarılmayı özlüyorum.",
-"Senin yanında dünya duruyor gibi.",
-"İyi ki tanışmışız.",
-"Bir ömür seni sevebilirim.",
-"Sen benim şansımsın.",
-"Mutluluğun en güzel hali sensin.",
-"Hayatıma renk kattın.",
-"Sen benim gülümseme sebebimsin.",
-"Seni sevmek çok güzel.",
-"Sen benim en özel insansımsın.",
-"Bir gün değil her gün seni seviyorum.",
-"Seninle geçen zaman çok değerli.",
-"Kalbimde hep sen varsın.",
-"Hayat seni karşıma çıkardığı için şanslıyım.",
-"Her şeyden çok seni önemsiyorum.",
-"Sen benim en güzel gerçeğimsin.",
-"İyi ki bana denk gelmişsin.",
-"Sevgin içimi ısıtıyor.",
-"Seninle daha güçlüyüm.",
 "Birlikte nice güzel günlere.",
-"Sen benim en sevdiğim kişisin.",
-"Seni düşündükçe gülümsüyorum.",
-"Kalbim seni görünce hızlanıyor.",
-"Yanımda olman yeter.",
-"Sen benim geleceğimsin.",
-"Sensiz eksik hissederim.",
-"Birlikte olduğumuz her gün için minnettarım.",
-"Sen benim huzurlu limanımsın.",
-"İyi ki kalbimdesin.",
-"Sen benim güzel tesadüfümsün.",
-"Sana bakmak bile mutluluk veriyor.",
-"Sen benim en güzel heyecanımsın.",
-"Hayatımın anlamlarından birisin.",
-"Sen benim vazgeçilmezimsin.",
-"Her gün biraz daha aşık oluyorum.",
-"Sen benim mutluluk sebebimsin.",
-"İyi ki sen.",
-"Kalbimdeki yerin bambaşka.",
-"Bir mesajın bile günümü güzelleştiriyor.",
-"Sen benim en güzel yarınımsın.",
-"Yanında zamanın nasıl geçtiğini anlamıyorum.",
-"Seni tanımak hayatımın dönüm noktasıydı.",
-"Sen benim en sevdiğim hikâyesin.",
-"İyi ki benimlesin.",
-"Seninle olmak çok güzel.",
-"Kalbimde sadece sen varsın.",
-"Sana her gün teşekkür etmek istiyorum.",
-"Birlikte olduğumuz için çok mutluyum.",
-"Sen benim dünyamsın.",
-"Ne olursa olsun seni seveceğim.",
-"Sen benim sonsuzluğumsun. ❤️"
+"Gülüşünü özledim. 🌹",
+"Sen benim huzurumsun.",
+"Her gün sana yeniden aşık oluyorum.",
+"İyi ki yollarımız kesişmiş.",
+"Seni düşündükçe gülümsüyorum."
 ];
 
-function showLoveMessage(){
-
-    const random =
-    messages[Math.floor(Math.random()*messages.length)];
-
-    document.getElementById("loveMessage").innerHTML = random;
+function randomMessage(){
+const random = messages[Math.floor(Math.random()*messages.length)];
+document.getElementById("message").innerHTML = random;
 }
 
 function createHeart(){
 
-    const heart = document.createElement("div");
+const heart = document.createElement("div");
 
-    heart.classList.add("heart");
-    heart.innerHTML = "❤";
+heart.className = "heart";
+heart.innerHTML = "❤️";
+heart.style.left = Math.random()*100+"vw";
+heart.style.fontSize = (Math.random()*25+15)+"px";
+heart.style.animationDuration = (Math.random()*4+6)+"s";
 
-    heart.style.left = Math.random()*100+"vw";
-    heart.style.fontSize = Math.random()*20+15+"px";
+document.body.appendChild(heart);
 
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },8000);
+setTimeout(()=>{
+heart.remove();
+},10000);
 }
 
-setInterval(createHeart,600);
+setInterval(createHeart,500);
 
 </script>
 
