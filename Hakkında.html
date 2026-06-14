@@ -6,117 +6,155 @@
 <title>Rabia ❤️ Özgür</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(-45deg,#0f172a,#1e293b,#111827,#312e81);
-    background-size:400% 400%;
-    animation:bg 15s ease infinite;
-    overflow:hidden;
-    color:white;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#0f172a,#1e293b,#111827,#312e81);
+background-size:400% 400%;
+animation:bg 15s ease infinite;
+overflow:hidden;
+color:white;
 }
 
 @keyframes bg{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+#welcomeScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(-45deg,#0f172a,#1e293b,#111827,#312e81);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+text-align:center;
+}
+
+#welcomeScreen h1{
+font-size:4rem;
+margin-bottom:20px;
+text-shadow:0 0 20px #ff69b4;
+}
+
+#welcomeScreen p{
+font-size:1.2rem;
+margin-bottom:20px;
+color:#ddd;
+}
+
+#welcomeScreen input{
+padding:15px;
+border:none;
+border-radius:15px;
+width:260px;
+text-align:center;
+font-size:18px;
+outline:none;
 }
 
 .container{
-    width:90%;
-    max-width:900px;
-    text-align:center;
-    padding:40px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(12px);
-    border-radius:25px;
-    border:1px solid rgba(255,255,255,.1);
-    z-index:2;
+width:90%;
+max-width:900px;
+text-align:center;
+padding:40px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:25px;
+border:1px solid rgba(255,255,255,.1);
+z-index:2;
 }
 
 h1{
-    font-size:3rem;
-    margin-bottom:10px;
+font-size:3rem;
+margin-bottom:10px;
 }
 
 .quote{
-    color:#d1d5db;
-    margin-bottom:30px;
-    line-height:1.7;
+color:#d1d5db;
+margin-bottom:30px;
+line-height:1.7;
 }
 
 .timer{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin:25px 0;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin:25px 0;
 }
 
 .box{
-    background:rgba(255,255,255,.08);
-    border-radius:20px;
-    padding:20px;
+background:rgba(255,255,255,.08);
+border-radius:20px;
+padding:20px;
 }
 
 .number{
-    font-size:2rem;
-    font-weight:bold;
+font-size:2rem;
+font-weight:bold;
 }
 
 .label{
-    margin-top:5px;
-    color:#cbd5e1;
+margin-top:5px;
+color:#cbd5e1;
 }
-
 .letter{
-    margin-top:25px;
-    line-height:1.9;
-    font-size:1.05rem;
+margin-top:25px;
+line-height:1.9;
+font-size:1.05rem;
 }
 
 button{
-    margin-top:25px;
-    padding:14px 28px;
-    border:none;
-    border-radius:40px;
-    background:#ec4899;
-    color:white;
-    cursor:pointer;
-    font-size:1rem;
+margin-top:25px;
+padding:14px 28px;
+border:none;
+border-radius:40px;
+background:#ec4899;
+color:white;
+cursor:pointer;
+font-size:1rem;
+transition:.3s;
 }
 
 button:hover{
-    transform:scale(1.05);
+transform:scale(1.05);
 }
 
 #message{
-    min-height:60px;
-    margin-top:20px;
-    color:#f9a8d4;
-    font-size:1.1rem;
+min-height:60px;
+margin-top:20px;
+color:#f9a8d4;
+font-size:1.1rem;
 }
 
 .heart{
-    position:absolute;
-    bottom:-50px;
-    color:#ff4d6d;
-    animation:rise linear forwards;
+position:absolute;
+bottom:-50px;
+color:#ff4d6d;
+animation:rise linear forwards;
 }
 
 @keyframes rise{
-    to{
-        transform:translateY(-110vh);
-        opacity:0;
-    }
+to{
+transform:translateY(-110vh);
+opacity:0;
+}
 }
 
 @media(max-width:700px){
@@ -128,11 +166,42 @@ grid-template-columns:repeat(2,1fr);
 h1{
 font-size:2.2rem;
 }
+
+#welcomeScreen h1{
+font-size:2.8rem;
 }
+}
+
 </style>
 </head>
 
 <body>
+
+<audio id="bgMusic" loop>
+<source src="yalın.mp3" type="audio/mpeg">
+</audio>
+
+<div id="welcomeScreen">
+
+<h1>🔒 Rabia ❤️ Özgür</h1>
+
+<p>
+Bu sayfa sadece gerçek aşkın sahibine açılır ❤️
+</p>
+
+<input
+type="password"
+id="password"
+placeholder="Şifreyi gir..."
+>
+
+<button onclick="checkPassword()">
+❤️ Giriş Yap
+</button>
+
+<p id="error" style="margin-top:15px;color:#ff9abf;"></p>
+
+</div>
 
 <div class="container">
 
@@ -168,12 +237,13 @@ Benim için o kişi sensin Rabia."
 </div>
 
 </div>
-
 <div class="letter">
+
 Sevgili Rabia,<br><br>
 
 Bu sayfayı sana küçük bir hediye olarak hazırladım.
-Ne zaman beni özlersen gelip bak diye...
+Ne zaman beni özlersen gelip bak diye...<br><br>
+
 Belki her zaman yanında olamam ama bil ki kalbimin
 en güzel köşesinde hep sen varsın.<br><br>
 
@@ -181,6 +251,7 @@ en güzel köşesinde hep sen varsın.<br><br>
 İyi ki hayatımdasın. ❤️<br><br>
 
 — Özgür
+
 </div>
 
 <button onclick="randomMessage()">
@@ -193,17 +264,55 @@ en güzel köşesinde hep sen varsın.<br><br>
 
 <script>
 
-const startDate = new Date("2026-02-06T00:00:00");
+function checkPassword(){
+
+const pass =
+document.getElementById("password")
+.value
+.toLowerCase()
+.trim();
+
+if(pass === "ask"){
+
+document.getElementById("welcomeScreen")
+.style.display = "none";
+
+const music =
+document.getElementById("bgMusic");
+
+music.volume = 0.5;
+
+music.play().catch(()=>{});
+
+}else{
+
+document.getElementById("error").innerHTML =
+"❤️ Şifre yanlış, aşkı tekrar dene...";
+
+}
+
+}
+
+const startDate =
+new Date("2026-02-06T00:00:00");
 
 function updateCounter(){
 
 const now = new Date();
+
 const diff = now - startDate;
 
-const days = Math.floor(diff / (1000*60*60*24));
-const hours = Math.floor((diff/(1000*60*60)) % 24);
-const minutes = Math.floor((diff/(1000*60)) % 60);
-const seconds = Math.floor((diff/1000) % 60);
+const days =
+Math.floor(diff/(1000*60*60*24));
+
+const hours =
+Math.floor((diff/(1000*60*60))%24);
+
+const minutes =
+Math.floor((diff/(1000*60))%60);
+
+const seconds =
+Math.floor((diff/1000)%60);
 
 document.getElementById("days").innerText = days;
 document.getElementById("hours").innerText = hours;
@@ -213,9 +322,11 @@ document.getElementById("seconds").innerText = seconds;
 }
 
 setInterval(updateCounter,1000);
+
 updateCounter();
 
 const messages = [
+
 "Sen hayatıma gelen en güzel şeysin. ❤️",
 "İyi ki varsın Rabia.",
 "Bugün de seni çok seviyorum.",
@@ -225,32 +336,69 @@ const messages = [
 "Sen benim huzurumsun.",
 "Her gün sana yeniden aşık oluyorum.",
 "İyi ki yollarımız kesişmiş.",
-"Seni düşündükçe gülümsüyorum."
-];
+"Seni düşündükçe gülümsüyorum.",
 
+"Sen benim en güzel hikâyemsin.",
+"Kalbim hep seninle.",
+"Seninle geçen her gün çok değerli.",
+"İyi ki seni tanımışım.",
+"Hayatıma anlam kattın.",
+"Bir ömür seninle olmak istiyorum.",
+"Sen benim en güzel tesadüfümsün.",
+"Her şey seninle daha güzel.",
+"Mutluluğumun sebebi sensin.",
+"Sen benim evimsin. ❤️"
+
+];
 function randomMessage(){
-const random = messages[Math.floor(Math.random()*messages.length)];
-document.getElementById("message").innerHTML = random;
+
+const random =
+messages[Math.floor(Math.random()*messages.length)];
+
+document.getElementById("message").innerHTML =
+random;
+
 }
 
 function createHeart(){
 
-const heart = document.createElement("div");
+const heart =
+document.createElement("div");
 
 heart.className = "heart";
+
 heart.innerHTML = "❤️";
-heart.style.left = Math.random()*100+"vw";
-heart.style.fontSize = (Math.random()*25+15)+"px";
-heart.style.animationDuration = (Math.random()*4+6)+"s";
+
+heart.style.left =
+Math.random()*100+"vw";
+
+heart.style.fontSize =
+(Math.random()*25+15)+"px";
+
+heart.style.animationDuration =
+(Math.random()*4+6)+"s";
 
 document.body.appendChild(heart);
 
 setTimeout(()=>{
+
 heart.remove();
+
 },10000);
+
 }
 
 setInterval(createHeart,500);
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key === "Enter"){
+
+checkPassword();
+
+}
+
+});
 
 </script>
 
